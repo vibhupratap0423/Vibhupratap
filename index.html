@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vibhu Pratap | Portfolio</title>
   <style>
-    /* Dynamic gradient overlay with coding background */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1581090700227-1e8e3f8d34d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #f0f0f0;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #eee;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     header {
       text-align: center;
       padding: 60px 20px 30px;
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/apple-1868496_1280.jpg');
+      background-size: cover;
+      background-position: center;
       color: #fff;
-      text-shadow: 2px 2px 5px #000;
+      text-shadow: 1px 1px 5px #000;
     }
 
     section {
       max-width: 900px;
       margin: auto;
       padding: 30px 20px;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.4);
       border-radius: 12px;
       margin-top: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
 
     h1, h2, h3, h4 {
-      color: #00ffe1;
+      color: #fff;
     }
 
     h2 {
-      border-bottom: 2px solid #444;
+      border-bottom: 2px solid #555;
       padding-bottom: 8px;
       margin-bottom: 15px;
     }
@@ -48,19 +56,14 @@
     }
 
     a {
-      color: #80ffea;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: #4fd1c5;
     }
 
     footer {
       text-align: center;
       padding: 15px;
       background-color: #111;
-      color: #ccc;
+      color: #ff6666;
       margin-top: 40px;
     }
   </style>
@@ -68,7 +71,7 @@
 <body>
   <header>
     <h1>Hi, I'm Vibhu Pratap</h1>
-    <p>Welcome to my interactive portfolio!</p>
+    <p>Welcome to my  portfolio!</p>
   </header>
 
   <section id="about">
@@ -87,11 +90,20 @@
     <h2>Projects</h2>
     <div class="project">
       <h3>Image and Text Generation Using GAN</h3>
-      <p>Worked on frontend development using GANs to create synthetic media.</p>
+      <p>These images can be created by Generation Adversarial
+ Networks(GAN) which use a generator-discriminator
+ architecture to train, generate and rate synthetic images that
+ create a creation-feedback loop that runs multiple times until
+ the generated synthetic image can be considered real. I work
+ as a frontend-developer on this project.</p>
     </div>
     <div class="project">
       <h3>TO-DO App</h3>
-      <p>Task manager built with React.js and Vite, with real-time features and clean UI.</p>
+      <p>A simple and efficient T0-DO app designed to help users
+ manage tasks effectively. Built using HTML, CSS and
+ JavaScript ( React.js &Vite) , it allows users to add, update,
+ delete, and mark tasks as completed. Features include a clean
+ UI and Real-time update. </p>
     </div>
   </section>
 
