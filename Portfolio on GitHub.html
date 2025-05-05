@@ -1,38 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: beige;
-      color: #333;
+      color: #f4f4f4;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #1f1c2c, #928dab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      position: relative;
     }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.pixabay.com/photo/2015/01/08/18/25/laptop-593673_1280.jpg') no-repeat center center/cover;
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
     header {
-      background-color: #333;
+      background-color: rgba(0, 0, 0, 0.7);
       color: #fff;
-      padding: 20px;
+      padding: 30px;
       text-align: center;
     }
+
     section {
-      padding: 20px;
-      max-width: 800px;
+      padding: 30px;
+      max-width: 900px;
       margin: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+      border-radius: 10px;
     }
+
     h2 {
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid #bbb;
       padding-bottom: 5px;
+      color: #ffcc70;
     }
+
     .project, .internship, .skill {
       margin-bottom: 15px;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #81c784;
+    }
+
     footer {
-      color: red;
       text-align: center;
-      padding: 10px;
-      background-color: #eee;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffb6b9;
+      border-top: 1px solid #444;
     }
   </style>
 </head>
@@ -58,11 +104,11 @@
     <h2>Projects</h2>
     <div class="project">
       <h3>Image and Text Generation Using GAN</h3>
-      <p>Used GANs (Generative Adversarial Networks) to generate synthetic images and text. Worked as a frontend developer on this project.</p>
+      <p>Used GANs to generate synthetic images and text. I worked as a frontend developer on this project.</p>
     </div>
     <div class="project">
       <h3>TO-DO App</h3>
-      <p>A simple and efficient To-Do app built using React.js and Vite. Features include task management, real-time updates, and a clean UI.</p>
+      <p>A responsive task manager app built with React.js and Vite, supporting live task updates and a clean UI.</p>
     </div>
   </section>
 
@@ -71,7 +117,7 @@
     <div class="internship">
       <h3>Full Stack Developer</h3>
       <h4>Sofcon Pvt. Ltd.</h4>
-      <p>Worked under senior developers while learning and implementing technologies like HTML, CSS, JavaScript, Python, React.js, and Django (Oct 2024 – May 2025).</p>
+      <p>Worked under senior developers and learned HTML, CSS, JavaScript, Python, React.js, and Django. (Oct 2024 – May 2025)</p>
     </div>
   </section>
 
@@ -92,9 +138,9 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Phone: 7060057683</p>
-    <p>Email: pratapvibhu9456@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/vibhu-pratap-566811278" target="_blank">linkedin.com/in/vibhu</a></p>
+    <p>📱 Phone: 7060057683</p>
+    <p>✉️ Email: pratapvibhu9456@gmail.com</p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/vibhu-pratap-566811278" target="_blank">linkedin.com/in/vibhu</a></p>
   </section>
 
   <footer>
@@ -102,3 +148,4 @@
   </footer>
 </body>
 </html>
+
