@@ -1,142 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vibhu Pratap | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
     body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color:blue;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #f0f0f0;
-}
-
+      background: radial-gradient(circle at top left, #1c1c1c, #0f2027);
+      color: #ffffff;
+      overflow-x: hidden;
     }
-
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
     header {
+      padding: 3rem 2rem;
       text-align: center;
-      padding: 60px 20px 30px;
-      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/apple-1868496_1280.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-shadow: 1px 1px 5px #000;
+      background: linear-gradient(145deg, #0a0a0a, #1f1f1f);
+      box-shadow: inset 0 0 30px rgba(0, 242, 254, 0.1);
+      border-bottom: 2px solid #00f2fe;
+      position: relative;
     }
-
+    header h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00f2fe44; }
+      to { text-shadow: 0 0 20px #00f2feaa; }
+    }
+    .photo {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    .photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #00f2fe;
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+      transition: transform 0.4s;
+    }
+    .photo img:hover {
+      transform: scale(1.05);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #00f2fe33;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: #00f2fe;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: right;
+    }
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
     section {
-      max-width: 900px;
+      padding: 5rem 2rem;
+      max-width: 1100px;
       margin: auto;
-      padding: 30px 20px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 12px;
-      margin-top: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
-
-    h1, h2, h3, h4 {
-      color: #fff;
-    }
-
     h2 {
-      border-bottom: 2px solid #555;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid #00f2fe;
+      padding-left: 1rem;
+      color: #00f2fe;
     }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
+    .projects, .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
-
-    a {
-      color: #4fd1c5;
+    .card {
+      background: linear-gradient(to top left, rgba(255,255,255,0.03), rgba(255,255,255,0.08));
+      padding: 2rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(0,242,254,0.1);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.05);
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
+    }
     footer {
+      background: #0e0e0e;
       text-align: center;
-      padding: 15px;
-      background-color: #111;
-      color: #ff6666;
-      margin-top: 40px;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #999;
+      border-top: 1px solid #00f2fe33;
+    }
+    .contact a {
+      color: #00f2fe;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hi, I'm Vibhu Pratap</h1>
-    <p>Welcome to my  portfolio!</p>
+    <h1>Vibhu Pratap</h1>
+    <p>Full Stack Web Developer | Python | Django | React.js | Vite</p>
+    <div class="photo">
+      <img src="profile.jpg" alt="Vibhu Pratap Photo" />
+    </div>
   </header>
+
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+    <a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a passionate web developer interested in creating responsive and engaging websites.</p>
+    <p>I’m a Full Stack Developer based in Noida, India with experience in Python, Django, React.js, and Vite. I love building responsive and dynamic web applications that are both user-friendly and performant.</p>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <h3>B.Tech (CSE)</h3>
-    <h4>ITS Engineering College, Greater Noida</h4>
-    <p>2020–2024</p>
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="card">Python</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React.js</div>
+      <div class="card">Vite</div>
+      <div class="card">Django</div>
+      <div class="card">HTML & CSS</div>
+      <div class="card">MySQL</div>
+      <div class="card">Git & GitHub</div>
+    </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Image and Text Generation Using GAN</h3>
-      <p>These images can be created by Generation Adversarial
- Networks(GAN) which use a generator-discriminator
- architecture to train, generate and rate synthetic images that
- create a creation-feedback loop that runs multiple times until
- the generated synthetic image can be considered real. I work
- as a frontend-developer on this project.</p>
+    <div class="projects">
+      <div class="card">
+        <h3>GAN Image/Text Generator</h3>
+        <p>Developed a web app using GANs to generate realistic images and text. Focused on front-end with React and backend logic.</p>
+      </div>
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>Designed this responsive and dynamic portfolio using HTML, CSS, JavaScript, and GitHub Pages.</p>
+      </div>
     </div>
-    <div class="project">
-      <h3>TO-DO App</h3>
-      <p>A simple and efficient T0-DO app designed to help users
- manage tasks effectively. Built using HTML, CSS and
- JavaScript ( React.js &Vite) , it allows users to add, update,
- delete, and mark tasks as completed. Features include a clean
- UI and Real-time update. </p>
-    </div>
-  </section>
-
-  <section id="internship">
-    <h2>Internship</h2>
-    <div class="internship">
-      <h3>Full Stack Developer</h3>
-      <h4>Sofcon Pvt. Ltd.</h4>
-      <p>Worked on HTML, CSS, JS, Python, Django, React (Oct 2024 – May 2025).</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript, React.js, Vite</li>
-      <li>Python, Django, MySQL</li>
-      <li>MS Excel</li>
-    </ul>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Phone: 7060057683</p>
-    <p>Email: pratapvibhu9456@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/vibhu-pratap-566811278" target="_blank">linkedin.com/in/vibhu</a></p>
+    <h2>Contact Me</h2>
+    <p class="contact">
+      Phone: 7060057683 <br />
+      Email: <a href="mailto:pratapvibhu9456@gmail.com">pratapvibhu9456@gmail.com</a><br />
+      LinkedIn: <a href="https://www.linkedin.com/in/vibhu-pratap-566811278" target="_blank">vibhu-pratap-566811278</a><br />
+      Location: Noida, Uttar Pradesh, India
+    </p>
   </section>
 
   <footer>
-    Thank you for visiting my portfolio!
+    &copy; 2025 Vibhu Pratap. All rights reserved.
   </footer>
 </body>
 </html>
